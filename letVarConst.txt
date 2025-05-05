@@ -1,0 +1,78 @@
+
+1. let , var and const -->
+
+let, var and const all are keywords used to declare the variables. And they differ significantely in terms
+of scoping , initialization rules, Whether they can redclared or reassigned and the behaviour when they 
+are accessed before declaration.
+
+var --> 
+1. var can take global or function level scope.
+2. using var keyword function or variables can be hoisted means they can moved to the top of their
+   containing scope during compile phase and if we access them they give us undefined.
+3. variables declared using var keyword can be redclared.
+4. variable declared using var keyword can be reassigned as well.
+
+let -->
+1. let takes the Block level scope only.
+2. using let keyword function or variable can't be hoisted but if we access them then they give us 
+   ReferenceError coz of temporal dead zone.(declaration are hoisted but not initialization)
+   Until the declaration is reached,They are in temporal dead zone.
+3. variables declared using let keyword can't be redclared.
+4. variables declared using let keyword can be reassigned.
+
+const -->
+
+1. const takes the block level scope only.
+2. using const keyword function or variables can't be hoisted  but if we try to access them then they give
+   us ReferenceError.(declaration are hoisted but not initialization)
+   Until the declaration is reached,They are in temporal dead zone.
+3. variables declared using const keyword can't be redeclared.
+4. variables declared using const keyword can't be reassigned.
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+// During let,const case ... when we try to access the variable before declaration, It gives us 
+   ReferenceError because of TDZ.
+
+   console.log(x); // ❌ ReferenceError
+   let x = 10;
+
+  Here in this example, 
+
+  First js does two things-- 1. Memory allocation phase - where it allocates the memory to the variable.
+                               As they aren't initialized coz of that they go into TDZ.
+                            2. Excuting phase - It excutes the code line by line.
+
+    So, Now we know we have x but when we try to access x before declaration it gives us ReferenceError
+    coz we are in temporal dead zone. 
+
+
+---------------------------------------------------------------------------------------------
+
+//During the var case -->
+
+  console.log(x); // undefined
+  var x = 10;
+
+In first case js allocate the memory for x.
+and immediately initialize with undefined.
+
+So, when we access before declaration it gives us undefined.
+
+----------------------------------------------------------------------------------------------
+
+Why var don't go into TDZ like let and const?.
+Before ES6, var was the only keyword to declare the variable and it was designed with function scoped 
+behavior and automatic initialization undefined.
+To maintain the backword compatibility, var variables are immediately initialize with undefined.
+
+And in the case of let and const -->
+let and const were introduced to fix the var's flwas...
+var leads to confusing bugs due to hoisting and undefined behavior.
+
+To make the let and const safer --
+js introduces the TDZ, which forces us to declare the variable before using it otherwise will get 
+ReferenceError, This makes code more predictable and easier to debug.
+ 
