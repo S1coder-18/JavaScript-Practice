@@ -12,7 +12,7 @@
 console.log(x);
 var x = "Sachin";
 
-//Variable declaration(using let and const) --> is hoisted, but not initialization.
+//Variable declaration(using let and const) --> are hoisted, but not initialization.
 // Accessing them results in ReferenceError until the actual declaration is encountered.
 
 console.log(a);  //ReferenceError: Cannot access 'a' before initialization
@@ -30,7 +30,7 @@ function foo(){
     console.log("Fully Hoisted!.");
 }
 
-// Function Expressions(var) --> is hoisted, b ut not initializataion. If we will try to access then
+// Function Expressions(var) --> is hoisted, but not initializataion. If we will try to access then
 // It will give undefined. 
 
 console.log(greet); //Undefined -- It behaves like variable as we store the function in a variable.
@@ -58,6 +58,13 @@ class person {
         console.log("class Declarations!.");
     }
 }
+
+/**
+ * The class declaration is hoisted to the top of the scope.
+ * But it's placed in the Temporal Dead Zone (TDZ) — the time between entering 
+ * the scope and executing the declaration.
+ * Accessing the class before it's evaluated results in a ReferenceError, just like let and const.
+ */
 
 //Import Declarations --> are fully hoisted and side effects of importing module are excuted 
 // before the rest of the code.
