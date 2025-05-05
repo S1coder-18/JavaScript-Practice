@@ -75,4 +75,53 @@ var leads to confusing bugs due to hoisting and undefined behavior.
 To make the let and const safer --
 js introduces the TDZ, which forces us to declare the variable before using it otherwise will get 
 ReferenceError, This makes code more predictable and easier to debug.
- 
+
+
+
+---------------------------------------------------------------------------------------------------
+Difference between == and === ?
+They both are used to perform the comparison == known as loose equality operator and === known as 
+strict equality operator.
+And the most basic Difference is that 
+Loose equality(==) --> 1. Used to perform the implicit type conversion.
+                       2. It compare the values after the type conversion if needed.
+Strict equality operator(===) --> 
+                       1. Doesn't perform the type conversion.
+                       2. It compares the value and type both without any type conversion.
+                       3. Value and type both must match.
+
+
+// Now we should get the question, That if js doesn't know the type of values then how it converts?
+Js does know types of every value, Its just that == doesn't require them to match before comparing .
+Instead, It uses the internal conversion rules to decide which value to convert and how, based on their types.                       
+
+For example -->
+    
+    console.log('5'==5); //true
+
+    left '5' -- string
+    right 5  -- number
+
+    So, Js says that, These types are different types, I will convert the string '5' into number implicitly.
+    And then after that it will compare the values, coz now types are same.
+
+-------------------------------------------------------------------------------------------------------
+
+// Console.log('5'===5); //false
+
+In this case, 1. It doesn't perform the type conversion here types are not same return false.
+              2. No need for checking values here.
+
+
+//Rules for === strict equality operator-->
+
+1. If types aren't same return false immediately.
+2. If types are same then --
+                1. Checks the value if same return true.
+                2. If not same then return the false.
+
+    For example --> 
+            console.log(5===10); //false
+
+        Here, types are same (number === number)
+        Now checks the value where (5 ===10) both values are different return false.    
