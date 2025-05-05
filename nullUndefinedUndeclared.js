@@ -40,6 +40,17 @@ console.log(undefined+1); //Nan
 console.log(x-1); //Nan
 console.log(x*1) //Nan
 
+x = 10;
+console.log("Harshita"+x); //Harshita10
+console.log([1,2]+"Sachin"); //1,2sachin
+
+let a = [2,3,4,5];
+console.log(...a +"Arrays"); // 2 3 4 5 s a c h n coz of browsr console we are getting ouput like this.
+
+console.log(a +"Arrays"); // 2 3 4 5sachn
+
+console.log("Sachin" + a); // sachin2 3 4 5
+
 //4. As x is declared, And it is undefined so it converts into string undefined.
 console.log("Sachin"+x); //sachinundefined
 
@@ -55,4 +66,5 @@ if(undefined){
 //3. If we try to access undclared variable, then it gives us ReferenceError.
 
 console.log(typeof y); //undefined
-console.log(y);        //ReferenceError: y is not defined
+// console.log(y);        //ReferenceError: y is not defined
+console.log("Sachin"+y); //ReferenceError: y is not defined
