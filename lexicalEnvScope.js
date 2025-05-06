@@ -1,5 +1,5 @@
 
-// what is Lexical Enviornment?
+//What is Lexical Enviornment?
 
 /**
  * Lexcical Enviornment --> is a combination of local memory and reference of lexical enviornment parents.
