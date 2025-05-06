@@ -1,4 +1,6 @@
 
+Scope --> Where we can access the variable of the function called scope.
+
 1. let , var and const -->
 
 let, var and const all are keywords used to declare the variables. And they differ significantely in terms
