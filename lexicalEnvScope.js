@@ -94,7 +94,9 @@ function outer() {
 /**
  * Inner's Lexical Environment: ----------------------------------------------->
  * 1.Local Enviornment Record :
+ * 
  *   y=20
+ * 
  * 
  * 2.Outer's  Lexical Enviornment Reference --> Outer's Lexical Enviornment 
  */
