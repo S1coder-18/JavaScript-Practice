@@ -32,7 +32,7 @@ console.log(typeof b); //number
 
 // Now here i got question that , can we directly change the x ?
 /**
- * I would say no, because here strings are immutable, So we can reassign the value on it but 
+ * No, Because here strings are immutable, So we can reassign the value on it but 
  * we can't change the type of the string into number or to any other datatypes.
  */
 
