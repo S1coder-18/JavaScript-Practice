@@ -65,3 +65,4 @@ console.log(typeof value);
  * - The `value` variable is now reassigned to point to this new number.
  * - The original string `'12'` is no longer referenced and becomes eligible for garbage collection.
  */
+
